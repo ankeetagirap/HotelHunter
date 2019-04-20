@@ -36,18 +36,28 @@
                     
                 </thead>
                 <tbody>
-                    <asp:ListView runat="server" ID="LstDetails">
+                    <div class="col-md-4">
+                    <asp:DataList ID="DlDetails" runat="server" OnItemCommand="DlDetails_ItemCommand">
                         <ItemTemplate>
+                            
                             <tr>
                                 <td><%#Eval("HotelName") %></td>
+                            </tr>
+                            <tr>
                                 <td><%#Eval("HotelAddress") %></td>
+                            </tr>
+                            <tr>
                                 <td><%#Eval("PhoneNo") %></td>
+                            </tr>
+                            <tr>
                                 <td><%#Eval("HotelEmailId") %></td>
+                            </tr>
+                            <tr>
                                 <td><%#Eval("Facilities") %></td>
                             </tr>
                         </ItemTemplate>
-                    </asp:ListView>
-
+                    </asp:DataList>
+                    </div>
                 </tbody>
              </table>
         </div>

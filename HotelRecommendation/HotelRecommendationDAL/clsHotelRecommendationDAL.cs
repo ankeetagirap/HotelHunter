@@ -57,6 +57,13 @@ namespace HotelRecommendationDAL
             return val;
         }
 
-        
+        //public DataSet GetHotelDetails()
+        //{
+        //    objSqlCon.ConnectionString = DBHelper.ConnectionString().ToString();
+        //    SqlParameter[] objSqlParam = new SqlParameter[1];
+        //    objSqlParam[5] = new SqlParameter("@Id", SqlDbType.Int);
+        //    objSqlParam[5].Direction = ParameterDirection.Input;
+        //    objSqlParam[5].Value = objUserEntity.QualityR;
+        //}
     }
 }

@@ -5,22 +5,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>H-Code | shared on themelock.com</title>
-        <meta name="description" content="H-Code - A premium portfolio template from ThemeZaa">
-        <meta name="keywords" content="">
-        <meta charset="utf-8">
-        <meta name="author" content="ThemeZaa">
+        <meta name="description" content="H-Code - A premium portfolio template from ThemeZaa"/>
+        <meta name="keywords" content=""/>
+        <meta charset="utf-8"/>
+        <meta name="author" content="ThemeZaa"/>
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
         <!-- favicon -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="shortcut icon" href="images/favicon.png">
-        <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel="shortcut icon" href="images/favicon.png"/>
+        <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"/>
         <!-- animation --> 
         <link rel="stylesheet" href="css/animate.css" />
         <!-- bootstrap --> 
         <link rel="stylesheet" href="css/bootstrap.css" />
-		  <link rel="stylesheet" href="css/bootstrap.min.css">
+		  <link rel="stylesheet" href="css/bootstrap.min.css"/>
 		   <script src="js/jquery.min.js"></script>
            <script src="js/bootstrap.min.js"></script>
         <!-- et line icon --> 
@@ -58,9 +58,9 @@
 </style>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
-
+        
     </asp:ContentPlaceHolder>
-</head>
+    </head>
 <body>
     <form id="form1" runat="server">
         <nav class="navbar navbar-default navbar-fixed-top nav-transparent overlay-nav sticky-nav nav-border-bottom bg-white" role="navigation">
@@ -93,7 +93,7 @@
                     <!-- end main menu -->
                 </div>
             </div>
-        </nav><br><br><br><br>
+        </nav><br/><br/><br/><br/>
 
 
 

@@ -98,14 +98,86 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\animate.css" />
+    <Content Include="css\bootstrap-theme.css" />
+    <Content Include="css\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\et-line-icons.css" />
+    <Content Include="css\extralayers.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\full-slider.css" />
+    <Content Include="css\magnific-popup.css" />
+    <Content Include="css\owl.carousel.css" />
+    <Content Include="css\owl.transitions.css" />
+    <Content Include="css\responsive.css" />
+    <Content Include="css\settings.css" />
+    <Content Include="css\style-ie.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\text-effect.css" />
+    <Content Include="fonts\et-line.svg" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\revicons.svg" />
+    <Content Include="HotelList.aspx" />
     <Content Include="images\FilledStar.gif" />
     <Content Include="images\Star.gif" />
     <Content Include="images\WaitingStar.gif" />
+    <Content Include="index.aspx" />
+    <Content Include="js\._ajax-popup-slider.js" />
+    <Content Include="js\._main.js" />
+    <Content Include="js\ajax-popup-slider.js" />
+    <Content Include="js\blog-masonry.js" />
+    <Content Include="js\bootstrap-hover-dropdown.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\counter.js" />
+    <Content Include="js\html5shiv.js" />
+    <Content Include="js\imagesloaded.pkgd.min.js" />
+    <Content Include="js\jquery.easing.1.3.js" />
+    <Content Include="js\jquery.easypiechart.js" />
+    <Content Include="js\jquery.fitvids.js" />
+    <Content Include="js\jquery.isotope.min.js" />
+    <Content Include="js\jquery.magnific-popup.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\jquery.parallax-1.1.3.js" />
+    <Content Include="js\jquery.revolution.js" />
+    <Content Include="js\jquery.tools.min.js" />
+    <Content Include="js\jquery.viewport.mini.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\modernizr.js" />
+    <Content Include="js\one-page-main.js" />
+    <Content Include="js\owl.carousel.min.js" />
+    <Content Include="js\page-scroll.js" />
+    <Content Include="js\popup-gallery.js" />
+    <Content Include="js\skrollr.min.js" />
+    <Content Include="js\smooth-scroll.js" />
+    <Content Include="js\text-effect.js" />
+    <Content Include="js\wow.min.js" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="main.Master" />
+    <Content Include="css\bootstrap-theme.css.map" />
+    <Content Include="css\bootstrap-theme.min.css.map" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="css\bootstrap.min.css.map" />
+    <Content Include="fonts\et-line.eot" />
+    <Content Include="fonts\et-line.ttf" />
+    <Content Include="fonts\et-line.woff" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\revicons.eot" />
+    <Content Include="fonts\revicons.ttf" />
+    <Content Include="fonts\revicons.woff" />
+    <Content Include="GlyphIcons\Doc1.docx" />
+    <Content Include="js\._Find Results" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -268,6 +340,12 @@
     <Content Include="images\white50.png" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="sound\intro01.mp3" />
+    <Content Include="sound\intro02.mp3" />
+    <Content Include="sound\intro03.mp3" />
+    <Content Include="sound\intro04.mp3" />
+    <Content Include="sound\intro05.mp3" />
+    <Content Include="sound\intro06.mp3" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -277,6 +355,20 @@
     </Compile>
     <Compile Include="details.aspx.designer.cs">
       <DependentUpon>details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HotelList.aspx.cs">
+      <DependentUpon>HotelList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HotelList.aspx.designer.cs">
+      <DependentUpon>HotelList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="main.Master.cs">
       <DependentUpon>main.Master</DependentUpon>
@@ -301,7 +393,9 @@
       <Name>HotelRecommendationENTITY</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="video\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
