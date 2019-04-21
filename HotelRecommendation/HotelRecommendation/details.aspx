@@ -39,7 +39,9 @@
                     <div class="col-md-4">
                     <asp:DataList ID="DlDetails" runat="server">
                         <ItemTemplate>
-                            
+                            <tr>
+                                 <td><%#Eval("Id") %></td>
+                            </tr>
                             <tr>
                                 <td><%#Eval("HotelName") %></td>
                             </tr>
@@ -65,20 +67,25 @@
 
     <div class="well">
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-3">
 			</div>
 			<div class="col-md-4">
 				<h2>Reviews</h2><hr/>
 				
 					
                 <asp:Label ID="lblName" runat="server" Text="Name"></asp:Label>
-                    <asp:TextBox ID="txtName" runat="server"></asp:TextBox><br />
+                    <asp:TextBox ID="txtName" runat="server"></asp:TextBox><asp:RequiredFieldValidator ID="rfvName" runat="server" ControlToValidate="txtName" ErrorMessage="enter the Name" ForeColor="Red"></asp:RequiredFieldValidator><br />
+                 
 
                 <asp:Label ID="lblPhoneNo" runat="server" Text="Phone no"></asp:Label>
-                    <asp:TextBox ID="txtPhoneNo" runat="server"></asp:TextBox><br />
+                    <asp:TextBox ID="txtPhoneNo" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvPhoneNo" runat="server" ControlToValidate="txtPhoneNo" ErrorMessage="enter the phone no" ForeColor="Red"></asp:RequiredFieldValidator>
+                <br />
 
 					<asp:Label ID="lblEmailId" runat="server" Text="EmailId"></asp:Label>
-					<asp:TextBox ID="txtEmailId" runat="server"></asp:TextBox><br />	
+					<asp:TextBox ID="txtEmailId" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvEmailId" runat="server" ControlToValidate="txtEmailId" ErrorMessage="enter emailId" ForeColor="Red"></asp:RequiredFieldValidator>
+                <br />	
 
                 <table>
                     <tr>
@@ -89,6 +96,7 @@
                             <asp:Rating ID="ajxRatingHygine"  StarCssClass="blankstar" MaxRating="5" RatingAlign="Horizontal" WaitingStarCssClass="halfstar"
                          EmptyStarCssClass="blankstar" FilledStarCssClass="shiningstar" runat="server">
                         </asp:Rating>
+                            
                         </td>
                     </tr>
 

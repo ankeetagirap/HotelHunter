@@ -32,7 +32,7 @@ namespace HotelRecommendation
 
         private void BindHotelDataList()
         {
-            int hotelId = Convert.ToInt32(Session["HotelId"]);
+            int hotelId = Convert.ToInt32(Request.QueryString["Id"]);
             DataSet dsDataList = objclsHotelRecommendationDAL.FetchHotelDetails(hotelId);
             DlDetails.DataSource = dsDataList;
             DlDetails.DataBind();
@@ -40,7 +40,7 @@ namespace HotelRecommendation
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            if(DuplicateCheck() == true/* && EmptyRating() == false */)
+            if(DuplicateCheck() == true && EmptyRating() == true)
             {
                 clsHotelRecommendationENTITY objUserEntity = new clsHotelRecommendationENTITY();
                 objUserEntity.Name = txtName.Text;
@@ -52,16 +52,36 @@ namespace HotelRecommendation
 
                 clsHotelRecommendationBAL objUserBAL = new clsHotelRecommendationBAL();
                 DataSet Output = objUserBAL.InsertDetails(objUserEntity);
+                
+                ClearAll();
                 lblmsg.Text = "Data recorded succesfully";
-                
-                
+
             }
         }
 
-        //private bool EmptyRating()
-        //{
+        private void ClearAll()
+        {
+            txtName.Text = string.Empty;
             
-        //}
+            txtPhoneNo.Text = string.Empty;
+            txtEmailId.Text = string.Empty;
+            ajxRatingHygine.CurrentRating = 0;
+            ajxRatingService.CurrentRating = 0;
+            ajxRatingQuality.CurrentRating = 0;
+        }
+
+        private bool EmptyRating()
+        {
+            if(ajxRatingHygine.CurrentRating>0 && ajxRatingService.CurrentRating>0 && ajxRatingQuality.CurrentRating>0)
+            {
+                return true;
+                
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         private bool DuplicateCheck()
         {

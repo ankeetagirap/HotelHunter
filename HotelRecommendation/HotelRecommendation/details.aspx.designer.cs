@@ -40,6 +40,15 @@ namespace HotelRecommendation {
         protected global::System.Web.UI.WebControls.TextBox txtName;
         
         /// <summary>
+        /// rfvName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvName;
+        
+        /// <summary>
         /// lblPhoneNo control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace HotelRecommendation {
         protected global::System.Web.UI.WebControls.TextBox txtPhoneNo;
         
         /// <summary>
+        /// rfvPhoneNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPhoneNo;
+        
+        /// <summary>
         /// lblEmailId control.
         /// </summary>
         /// <remarks>
@@ -74,6 +92,15 @@ namespace HotelRecommendation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmailId;
+        
+        /// <summary>
+        /// rfvEmailId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmailId;
         
         /// <summary>
         /// lblHygine control.

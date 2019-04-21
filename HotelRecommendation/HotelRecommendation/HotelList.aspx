@@ -60,7 +60,7 @@
                             </tr>
                         <tr>
                             <td>
-                                <asp:Button ID="btnDetails" runat="server" Text="Details" OnClick="btnDetails_Click" />
+                                <a href ="details.aspx?Id=<%# DataBinder.Eval(Container.DataItem, "Id") %>">Details</a>
                             </td>
                         </tr>
                             
