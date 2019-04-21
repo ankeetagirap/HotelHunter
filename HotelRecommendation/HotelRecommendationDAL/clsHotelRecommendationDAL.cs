@@ -57,13 +57,35 @@ namespace HotelRecommendationDAL
             return val;
         }
 
-        //public DataSet GetHotelDetails()
-        //{
-        //    objSqlCon.ConnectionString = DBHelper.ConnectionString().ToString();
-        //    SqlParameter[] objSqlParam = new SqlParameter[1];
-        //    objSqlParam[5] = new SqlParameter("@Id", SqlDbType.Int);
-        //    objSqlParam[5].Direction = ParameterDirection.Input;
-        //    objSqlParam[5].Value = objUserEntity.QualityR;
-        //}
+        public DataSet FetchHotelDetails(int hotelId)
+        {
+            objSqlCon.ConnectionString = DBHelper.ConnectionString().ToString();
+            SqlParameter[] objSqlParam = new SqlParameter[1];
+            objSqlParam[0] = new SqlParameter("@Id", SqlDbType.VarChar);
+            objSqlParam[0].Direction = ParameterDirection.Input;
+            objSqlParam[0].Value = hotelId;
+            DataSet val = SqlHelper.ExecuteDataset(objSqlCon, CommandType.StoredProcedure, "FetchHotelDetail", objSqlParam);
+            return val;
+        }
+
+        public DataSet GetHotelDetails(int id)
+        {
+            objSqlCon.ConnectionString = DBHelper.ConnectionString().ToString();
+            SqlParameter[] objSqlParam = new SqlParameter[1];
+            objSqlParam[0] = new SqlParameter("@Id", SqlDbType.VarChar);
+            objSqlParam[0].Direction = ParameterDirection.Input;
+            objSqlParam[0].Value = id;
+            DataSet val = SqlHelper.ExecuteDataset(objSqlCon, CommandType.StoredProcedure, "GetHotelDetails", objSqlParam);
+            return val;
+        }
+
+        public DataSet GetCity()
+        {
+            objSqlCon.ConnectionString = DBHelper.ConnectionString().ToString();
+            DataSet val = SqlHelper.ExecuteDataset(objSqlCon, CommandType.StoredProcedure, "GetCityList");
+            return val;
+        }
+
+        
     }
 }

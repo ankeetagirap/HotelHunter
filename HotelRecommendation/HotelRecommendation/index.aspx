@@ -35,19 +35,18 @@
                                                         <!-- label -->
                                                         <label class="text-uppercase white-text">Where do you want to go?</label>
                                                         <!-- end label -->
-                                                        <!-- input -->
-                                                        <input type="text" name="name" id="textbox1" placeholder="Eg. Melbourne, Australia"/>
-                                                        <!-- end input -->
+                                                       
+                                                        <asp:DropDownList ID="ddlCity" runat="server" OnSelectedIndexChanged="ddlCity_SelectedIndexChanged"></asp:DropDownList>
+
                                                     </div>
                                                 </div>
                                                 
                                                 <div class="col-md-4 col-sm-6 no-padding-left">
                                                 <br/>
-                                                    <button class="highlight-button-dark btn btn-medium  button xs-margin-bottom-five"><i class="fa fa-search"></i>Search</button>
+                                                    <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Submit" />
                                                 </div>
 
                                                 </div>
-
                                          </form>
                                         </div>
                                     </div>

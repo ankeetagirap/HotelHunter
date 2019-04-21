@@ -31,7 +31,7 @@
 		<div class="well">
 		<div class="row">
 		<div class="col-sm-5">
-            <asp:DataList ID="HotelInfo" runat="server"  RepeatColumns="6" RepeatDirection="Vertical">
+            <asp:DataList ID="HotelInfo" runat="server" RepeatDirection="Vertical">
                 <ItemTemplate>
                     <table>
                         <tr>
@@ -39,8 +39,15 @@
                                  <%--<asp:Image ID="image1" runat="server" height="260" width="300" ImageUrl=""--%>
                              </td>
                         </tr>
+                        <tr>
+                            <td>
+                                  <%# DataBinder.Eval(Container.DataItem, "Id") %>
+                                
+                            </td>
+                        </tr>
                          <tr>
-                                <td><%#Eval("HotelName") %></td>
+                              
+                                <td><%# DataBinder.Eval(Container.DataItem, "HotelName") %></td>
                         </tr>
                             <tr>
                                 <td><%#Eval("HotelAddress") %></td>
@@ -51,6 +58,11 @@
                             <tr>
                                 <td><%#Eval("HotelEmailId") %></td>
                             </tr>
+                        <tr>
+                            <td>
+                                <asp:Button ID="btnDetails" runat="server" Text="Details" OnClick="btnDetails_Click" />
+                            </td>
+                        </tr>
                             
                             
                         

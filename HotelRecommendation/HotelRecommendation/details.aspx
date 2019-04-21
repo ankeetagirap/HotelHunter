@@ -37,7 +37,7 @@
                 </thead>
                 <tbody>
                     <div class="col-md-4">
-                    <asp:DataList ID="DlDetails" runat="server" OnItemCommand="DlDetails_ItemCommand">
+                    <asp:DataList ID="DlDetails" runat="server">
                         <ItemTemplate>
                             
                             <tr>
@@ -52,9 +52,7 @@
                             <tr>
                                 <td><%#Eval("HotelEmailId") %></td>
                             </tr>
-                            <tr>
-                                <td><%#Eval("Facilities") %></td>
-                            </tr>
+                            
                         </ItemTemplate>
                     </asp:DataList>
                     </div>
@@ -125,6 +123,10 @@
                 
 
                 <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+
+                
+                  
+                    <asp:Label ID="lblmsg" runat="server"></asp:Label>
 
                 
                   

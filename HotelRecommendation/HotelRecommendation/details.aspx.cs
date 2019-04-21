@@ -24,15 +24,23 @@ namespace HotelRecommendation
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
-
+                BindHotelDataList();
             }
+        }
+
+        private void BindHotelDataList()
+        {
+            int hotelId = Convert.ToInt32(Session["HotelId"]);
+            DataSet dsDataList = objclsHotelRecommendationDAL.FetchHotelDetails(hotelId);
+            DlDetails.DataSource = dsDataList;
+            DlDetails.DataBind();
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            if(DuplicateCheck() == true)
+            if(DuplicateCheck() == true/* && EmptyRating() == false */)
             {
                 clsHotelRecommendationENTITY objUserEntity = new clsHotelRecommendationENTITY();
                 objUserEntity.Name = txtName.Text;
@@ -44,9 +52,16 @@ namespace HotelRecommendation
 
                 clsHotelRecommendationBAL objUserBAL = new clsHotelRecommendationBAL();
                 DataSet Output = objUserBAL.InsertDetails(objUserEntity);
+                lblmsg.Text = "Data recorded succesfully";
+                
                 
             }
         }
+
+        //private bool EmptyRating()
+        //{
+            
+        //}
 
         private bool DuplicateCheck()
         {
