@@ -326,6 +326,10 @@ img {
     -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
 }
+
+.bg11{
+     background-image:url("images/Main.jpg);
+}
 .img-circle {
     border-radius: 50%;
 }

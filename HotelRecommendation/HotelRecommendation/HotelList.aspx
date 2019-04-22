@@ -28,23 +28,25 @@
 		</div>
 		
 	<div class="col-md-9">
-		<div class="well">
+		
 		<div class="row">
-		<div class="col-sm-5">
+		<div class="col-lg-7">
             <asp:DataList ID="HotelInfo" runat="server" RepeatDirection="Vertical">
                 <ItemTemplate>
+                    <div class="well">
                     <table>
+                        
                         <tr>
                             <td>
-                                 <%--<asp:Image ID="image1" runat="server" height="260" width="300" ImageUrl=""--%>
+                                 <asp:Image ID="image1" runat="server" height="260" width="300" ImageUrl='<%#Eval("ImagePath") %>' />
                              </td>
                         </tr>
-                        <tr>
+                        <%--<tr>
                             <td>
                                   <%# DataBinder.Eval(Container.DataItem, "Id") %>
                                 
                             </td>
-                        </tr>
+                        </tr>--%>
                          <tr>
                               
                                 <td><%# DataBinder.Eval(Container.DataItem, "HotelName") %></td>
@@ -68,7 +70,7 @@
                         
 
                     </table>
-
+                    </div>
                 </ItemTemplate>
 
 
@@ -154,5 +156,5 @@
   </div>	
 
 </div>
-	</div>
+	
 </asp:Content>

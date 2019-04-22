@@ -36,12 +36,25 @@
                     
                 </thead>
                 <tbody>
-                    <div class="col-md-4">
+                    
+                    
                     <asp:DataList ID="DlDetails" runat="server">
+                        
                         <ItemTemplate>
+                            <div class="col-md-4">
+                            </div>
+                            <div class="col-md-4">
+                                
+                           
+                            
                             <tr>
-                                 <td><%#Eval("Id") %></td>
+                                <td>
+                                    <asp:Image ID="image1" runat="server" height="260" width="300" ImageUrl='<%#Eval("ImagePath") %>' />
+                                </td>
                             </tr>
+                                </div>
+                            
+                            <div class="col-md-4">
                             <tr>
                                 <td><%#Eval("HotelName") %></td>
                             </tr>
@@ -54,10 +67,18 @@
                             <tr>
                                 <td><%#Eval("HotelEmailId") %></td>
                             </tr>
+                                </div>
+                            </ItemTemplate>
+                              
+
+                           
                             
-                        </ItemTemplate>
+                        
+                        
                     </asp:DataList>
-                    </div>
+                        
+                    
+                    
                 </tbody>
              </table>
         </div>

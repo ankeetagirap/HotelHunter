@@ -3,22 +3,23 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
      <!-- tab section -->
-        <section class="no-padding-top travel-booking bg-magenta">
+        <section  style="background-image:url(images/Main.jpg);">
             <div class="container">
+
                 <div class="row">
                     <div class="col-md-12">
                         <div class="tab-style3">
                             <div class="row">
-                                <div class="col-md-12 col-sm-12">
+                                <%--<div class="col-md-12 col-sm-12">
                                     <!-- tab navigation -->
                                     <ul class="nav nav-tabs nav-tabs-light text-center xs-no-border xs-no-margin-top">
                                         
-                                        <li class="active no-margin-left xs-no-border"><a href="#tab3_sec1" data-toggle="tab"><i class="fa fa-suitcase"></i>Hotels</a></li>
+                                        
                                         
 
                                     </ul>
                                     <!-- end tab navigation -->
-                                </div>
+                                </div>--%>
                             </div>
                             <!-- tab content section -->
                             <div class="tab-content">
@@ -36,14 +37,14 @@
                                                         <label class="text-uppercase white-text">Where do you want to go?</label>
                                                         <!-- end label -->
                                                        
-                                                        <asp:DropDownList ID="ddlCity" runat="server" OnSelectedIndexChanged="ddlCity_SelectedIndexChanged"></asp:DropDownList>
+                                                        <asp:DropDownList ID="ddlCity" runat="server" OnSelectedIndexChanged="ddlCity_SelectedIndexChanged" style="border-radius:20px"></asp:DropDownList>
 
                                                     </div>
                                                 </div>
                                                 
                                                 <div class="col-md-4 col-sm-6 no-padding-left">
                                                 <br/>
-                                                    <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Submit" />
+                                                    <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Submit" style="margin-top: 4px;border-radius: 30px"/>
                                                 </div>
 
                                                 </div>
