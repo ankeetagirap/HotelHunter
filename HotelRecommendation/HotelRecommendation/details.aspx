@@ -45,7 +45,11 @@
                             </div>
                             <div class="col-md-4">
                                 
-                           
+                           <tr class="text-center">
+                               
+                                <td><h2><%#Eval("HotelName") %></h2><br /></td>
+                          
+                                   </tr>
                             
                             <tr>
                                 <td>
@@ -53,34 +57,67 @@
                                 </td>
                             </tr>
                                 </div>
+
+                            
+
                             
                             <div class="col-md-4">
+                            
                             <tr>
-                                <td><%#Eval("HotelName") %></td>
+                                <td><br /><b>Address:</b> <%#Eval("HotelAddress") %></td>
                             </tr>
                             <tr>
-                                <td><%#Eval("HotelAddress") %></td>
+                                <td><b>Phone No:</b> <%#Eval("PhoneNo") %></td>
                             </tr>
                             <tr>
-                                <td><%#Eval("PhoneNo") %></td>
-                            </tr>
-                            <tr>
-                                <td><%#Eval("HotelEmailId") %></td>
+                                <td><b>Email:</b> <%#Eval("HotelEmailId") %><br /></td>
                             </tr>
                                 </div>
-                            </ItemTemplate>
-                              
-
-                           
                             
+                            </ItemTemplate>
+
+
                         
-                        
-                    </asp:DataList>
-                        
-                    
-                    
-                </tbody>
+                        </asp:DataList>
+                   </tbody>
              </table>
+                        <div class="container-fluid">
+
+                            <table>
+                                <tr>
+                                    <td>
+                                         <asp:Literal ID="AverageHygineRating" runat="server"></asp:Literal><br/>
+                         
+                                         <asp:Literal ID="AverageServiceRating" runat="server"></asp:Literal><br/>
+                       
+                                         <asp:Literal ID="AverageQualityRating" runat="server"></asp:Literal><br/>
+                                    </td>
+                                    <td>
+                        <asp:Rating ID="HygineAverageRating"  StarCssClass="blankstar" MaxRating="5" RatingAlign="Horizontal" WaitingStarCssClass="halfstar"
+                         EmptyStarCssClass="blankstar" FilledStarCssClass="shiningstar" runat="server">
+                        </asp:Rating>
+
+                        <asp:Rating ID="ServiceAverageRating"  StarCssClass="blankstar" MaxRating="5" RatingAlign="Horizontal" WaitingStarCssClass="halfstar"
+                         EmptyStarCssClass="blankstar" FilledStarCssClass="shiningstar" runat="server"><br/>
+                        </asp:Rating>
+
+                        <asp:Rating ID="QualityAverageRating"  StarCssClass="blankstar" MaxRating="5" RatingAlign="Horizontal" WaitingStarCssClass="halfstar"
+                         EmptyStarCssClass="blankstar" FilledStarCssClass="shiningstar" runat="server"><br/>
+                        </asp:Rating>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                        
+                        
+
+                         
+
+                        </div>
+                        
+                    
+                
         </div>
     </div>
         </div>
@@ -90,7 +127,7 @@
 		<div class="row">
 			<div class="col-sm-3">
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-5">
 				<h2>Reviews</h2><hr/>
 				
 					
@@ -103,38 +140,37 @@
                 <asp:RequiredFieldValidator ID="rfvPhoneNo" runat="server" ControlToValidate="txtPhoneNo" ErrorMessage="enter the phone no" ForeColor="Red"></asp:RequiredFieldValidator>
                 <br />
 
-					<asp:Label ID="lblEmailId" runat="server" Text="EmailId"></asp:Label>
+					<asp:Label ID="lblEmailId" runat="server" Text="Email id"></asp:Label>
 					<asp:TextBox ID="txtEmailId" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfvEmailId" runat="server" ControlToValidate="txtEmailId" ErrorMessage="enter emailId" ForeColor="Red"></asp:RequiredFieldValidator>
                 <br />	
-
+                
                 <table>
                     <tr>
+                       
                         <td>
-                            <asp:Label ID="lblHygine" runat="server" Text="Rate the hygine of this hotel"></asp:Label>
+                            <asp:Label ID="lblHygine" runat="server" Text="Hygine:  "></asp:Label>
                         </td>
-                        <td>
+                        
+                        <td style="width:25%">
                             <asp:Rating ID="ajxRatingHygine"  StarCssClass="blankstar" MaxRating="5" RatingAlign="Horizontal" WaitingStarCssClass="halfstar"
                          EmptyStarCssClass="blankstar" FilledStarCssClass="shiningstar" runat="server">
                         </asp:Rating>
                             
                         </td>
-                    </tr>
+                        
 
-                    <tr>
                         <td>
-                            <asp:Label ID="lblService" runat="server" Text="Rate the service of this hotel"></asp:Label>
+                            <asp:Label ID="lblService" runat="server" Text="Service:  "></asp:Label>
                         </td>
-                        <td>
+                        <td style="width:25%">
                             <asp:Rating ID="ajxRatingService"  StarCssClass="blankstar" MaxRating="5" RatingAlign="Horizontal" WaitingStarCssClass="halfstar"
                          EmptyStarCssClass="blankstar" FilledStarCssClass="shiningstar" runat="server">
                         </asp:Rating>
                         </td>
-                    </tr>
-
-                    <tr>
+                        
                         <td>
-                            <asp:Label ID="lblQuality" runat="server" Text="Rate the quality of this hotel"></asp:Label>
+                            <asp:Label ID="lblQuality" runat="server" Text="Quality:  "></asp:Label>
                         </td>
                         <td>
                             <asp:Rating ID="ajxRatingQuality"  StarCssClass="blankstar" MaxRating="5" RatingAlign="Horizontal" WaitingStarCssClass="halfstar"
@@ -142,14 +178,10 @@
                         </asp:Rating>
                         </td>
                     </tr>
-
-                    
-
-                    
-
                 </table>
+                 
 
-                
+                <br/>
 
                 <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
 

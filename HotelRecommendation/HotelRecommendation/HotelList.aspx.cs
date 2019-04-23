@@ -39,13 +39,6 @@ namespace HotelRecommendation
 
         }
 
-        //protected void btnDetails_Click(object sender, EventArgs e)
-        //{
-        //    //int hotelId = (int)HotelInfo.DataKeys[(int)e.Item.ItemIndex];
-
-        //    //int StId = (int)DataList1.DataKeys[(int)e.Item.ItemIndex];
-        //    Response.Redirect("details.aspx?hotelid=" + HotelInfo.DataKeys[(int)e.]);
-
-        //}
+        
     }
 }

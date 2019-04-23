@@ -13,13 +13,14 @@ namespace HotelRecommendationBAL
 {
     public class clsHotelRecommendationBAL
     {
-        
-        public DataSet InsertDetails(clsHotelRecommendationENTITY objUserEntity)
+
+
+        public DataSet InsertDetails(int hotelId, clsHotelRecommendationENTITY objUserEntity)
         {
             clsHotelRecommendationDAL objUserDAL = new clsHotelRecommendationDAL();
             try
             {
-                return objUserDAL.InsertDetails(objUserEntity);
+                return objUserDAL.InsertDetails(hotelId,objUserEntity);
             }
             catch (Exception ex)
             {

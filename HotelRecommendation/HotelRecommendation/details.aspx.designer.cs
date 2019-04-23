@@ -22,6 +22,60 @@ namespace HotelRecommendation {
         protected global::System.Web.UI.WebControls.DataList DlDetails;
         
         /// <summary>
+        /// AverageHygineRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal AverageHygineRating;
+        
+        /// <summary>
+        /// AverageServiceRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal AverageServiceRating;
+        
+        /// <summary>
+        /// AverageQualityRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal AverageQualityRating;
+        
+        /// <summary>
+        /// HygineAverageRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.Rating HygineAverageRating;
+        
+        /// <summary>
+        /// ServiceAverageRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.Rating ServiceAverageRating;
+        
+        /// <summary>
+        /// QualityAverageRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.Rating QualityAverageRating;
+        
+        /// <summary>
         /// lblName control.
         /// </summary>
         /// <remarks>

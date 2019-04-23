@@ -27,6 +27,50 @@ namespace HotelRecommendation
             if (!IsPostBack)
             {
                 BindHotelDataList();
+                
+            }
+        }
+
+        private void BindRating()
+        {
+            try
+            {
+                int hotelId = Convert.ToInt32(Request.QueryString["Id"]);
+                int ratingQtotal = 0, ratingStotal = 0, ratingHtotal = 0;
+                DataSet ds = objclsHotelRecommendationDAL.GetRatings(hotelId);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    // now we will loop through the rows and get the total values submitted by the user.
+                    for (int getrating = 0; getrating < ds.Tables[0].Rows.Count; getrating++)
+                    {
+                        ratingHtotal += Convert.ToInt32(ds.Tables[0].Rows[0]["HygineRating"].ToString());
+                        ratingStotal += Convert.ToInt32(ds.Tables[0].Rows[0]["ServiceRating"].ToString());
+                        ratingQtotal += Convert.ToInt32(ds.Tables[0].Rows[0]["QualityRating"].ToString());
+
+                    }
+                    int count = ds.Tables[0].Rows.Count;
+                    // Over here we will get the average rating by dividing the total rating value by the count of users.
+                    int Haverage = ratingHtotal / count;
+
+                    int Qaverage = ratingQtotal / count;
+                    int Saverage = ratingStotal / count;
+
+                    //ajxRating.CurrentRating = average;
+                    int Average = (Qaverage + Saverage + Haverage) / 3;
+                    HygineAverageRating.CurrentRating = Haverage;
+                    ServiceAverageRating.CurrentRating = Saverage;
+                    QualityAverageRating.CurrentRating = Qaverage;
+
+                    AverageHygineRating.Text = "Average rating for Hygine is :" + " " + Convert.ToString(Haverage);
+                    AverageServiceRating.Text = "Average rating for Service is :" + " " + Convert.ToString(Saverage);
+                    AverageQualityRating.Text = "Average rating for Quality is :" + " " + Convert.ToString(Qaverage);
+
+
+                }
+                }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 
@@ -36,6 +80,7 @@ namespace HotelRecommendation
             DataSet dsDataList = objclsHotelRecommendationDAL.FetchHotelDetails(hotelId);
             DlDetails.DataSource = dsDataList;
             DlDetails.DataBind();
+            BindRating();
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -43,6 +88,8 @@ namespace HotelRecommendation
             if(DuplicateCheck() == true && EmptyRating() == true)
             {
                 clsHotelRecommendationENTITY objUserEntity = new clsHotelRecommendationENTITY();
+                int hotelId = Convert.ToInt32(Request.QueryString["Id"]);
+                
                 objUserEntity.Name = txtName.Text;
                 objUserEntity.PhoneNo = txtPhoneNo.Text;
                 objUserEntity.EmailId = txtEmailId.Text;
@@ -51,10 +98,12 @@ namespace HotelRecommendation
                 objUserEntity.QualityR = ajxRatingQuality.CurrentRating;
 
                 clsHotelRecommendationBAL objUserBAL = new clsHotelRecommendationBAL();
-                DataSet Output = objUserBAL.InsertDetails(objUserEntity);
+                DataSet Output = objUserBAL.InsertDetails(hotelId,objUserEntity);
                 
                 ClearAll();
                 lblmsg.Text = "Data recorded succesfully";
+                Response.Redirect("index.aspx");
+
 
             }
         }
@@ -86,7 +135,8 @@ namespace HotelRecommendation
         private bool DuplicateCheck()
         {
             string email = txtEmailId.Text;
-            DataSet ds = objclsHotelRecommendationDAL.DuplicateCheck(email);
+            int hotelId = Convert.ToInt32(Request.QueryString["Id"]);
+            DataSet ds = objclsHotelRecommendationDAL.DuplicateCheck(hotelId,email);
 
             if (Convert.ToInt32(ds.Tables[0].Rows[0]["count"]) > 0)
             {

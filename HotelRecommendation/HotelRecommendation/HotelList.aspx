@@ -8,21 +8,13 @@
 		
 		<div class="well sidebar-nav">
             <ul class="nav nav-list">
-              <li class="nav-header">Pune Cities</li>
-              <li class="active"><a href="#">Link</a></li>
-              <li><a href="#">Khed</a></li>
-              <li><a href="#">Baramati</a></li>
-              <li><a href="#">Bhor</a></li>
-             <li><a href="#">Daund</a></li>
-              <li><a href="#">Haveli</a></li>
-              <li><a href="#">Indapur</a></li>
-              <li><a href="#">Maval</a></li>
-              <li><a href="#">Junnar</a></li>
-             <li><a href="#">Mulshi</a></li>
-              <li><a href="#">Purandar</a></li>
-              <li><a href="#">Shirur</a></li>
-              <li><a href="#">Velhe</a></li>
-              <li><a href="#">Ambegaon</a></li>
+              <li class="nav-header">Cities</li>
+              <li><a href="#">Pune</a></li>
+              <li><a href="#">Mumbai</a></li>
+              <li><a href="#">Kolhapur</a></li>
+              <li><a href="#">Nagpur</a></li>
+              <li><a href="#">Sangli</a></li>
+              <li><a href="#">Nagpur</a></li>
             </ul>
 			</div>
 		</div>
@@ -35,10 +27,14 @@
                 <ItemTemplate>
                     <div class="well">
                     <table>
+                        <tr class="text-center">
+                                <td><h2><%# DataBinder.Eval(Container.DataItem, "HotelName") %><br /></h2></td>
+                            
+                        </tr>
                         
                         <tr>
                             <td>
-                                 <asp:Image ID="image1" runat="server" height="260" width="300" ImageUrl='<%#Eval("ImagePath") %>' />
+                                 <br /><asp:Image ID="image1" runat="server" height="260" width="300" ImageUrl='<%#Eval("ImagePath") %>' />
                              </td>
                         </tr>
                         <%--<tr>
@@ -47,22 +43,20 @@
                                 
                             </td>
                         </tr>--%>
-                         <tr>
-                              
-                                <td><%# DataBinder.Eval(Container.DataItem, "HotelName") %></td>
-                        </tr>
+                         
                             <tr>
-                                <td><%#Eval("HotelAddress") %></td>
+                                <td><br /><b>Hotel Address: </b><%#Eval("HotelAddress") %></td>
                             </tr>
                             <tr>
-                                <td><%#Eval("PhoneNo") %></td>
+                                <td><b>Phone No: </b><%#Eval("PhoneNo") %></td>
                             </tr>
                             <tr>
-                                <td><%#Eval("HotelEmailId") %></td>
+                                <td><b>Email: </b><%#Eval("HotelEmailId") %></td>
                             </tr>
                         <tr>
                             <td>
-                                <a href ="details.aspx?Id=<%# DataBinder.Eval(Container.DataItem, "Id") %>">Details</a>
+                                
+                                <br /><a style="color:blue;" href ="details.aspx?Id=<%# DataBinder.Eval(Container.DataItem, "Id") %>"><b>Details</b></a>
                             </td>
                         </tr>
                             
