@@ -28,7 +28,7 @@
                                     <div class="row margin-two no-margin-bottom">
                                         <div class="col-md-8 col-sm-12 center-col">
                                             <form action="#" method="post">
-                                                <div class="row">
+                                                <div class="row">   
                                                     <div class="col-md-2">
                                                     </div>
                                                     <div class="col-md-6 col-sm-8 no-padding-left xs-no-padding">

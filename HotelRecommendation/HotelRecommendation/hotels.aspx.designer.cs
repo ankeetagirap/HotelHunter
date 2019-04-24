@@ -10,16 +10,7 @@
 namespace HotelRecommendation {
     
     
-    public partial class HotelList {
-        
-        /// <summary>
-        /// ScriptManager1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+    public partial class hotels {
         
         /// <summary>
         /// CityList control.
@@ -31,12 +22,12 @@ namespace HotelRecommendation {
         protected global::System.Web.UI.WebControls.DataList CityList;
         
         /// <summary>
-        /// HotelInfo control.
+        /// AllHotelsList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList HotelInfo;
+        protected global::System.Web.UI.WebControls.DataList AllHotelsList;
     }
 }

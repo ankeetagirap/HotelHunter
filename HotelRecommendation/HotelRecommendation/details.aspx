@@ -27,7 +27,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
-    <asp:ToolkitScriptManager runat="server"></asp:ToolkitScriptManager>
+    <asp:ToolkitScriptManager ID="tsm" runat ="server"></asp:ToolkitScriptManager>
     <div class="container">
 	<div class="well">
 		<div class="row">
@@ -91,19 +91,25 @@
                                          <asp:Literal ID="AverageServiceRating" runat="server"></asp:Literal><br/>
                        
                                          <asp:Literal ID="AverageQualityRating" runat="server"></asp:Literal><br/>
+
+                                        <asp:Literal ID="AverageRatingScore" runat="server"></asp:Literal><br/>
                                     </td>
                                     <td>
-                        <asp:Rating ID="HygineAverageRating"  StarCssClass="blankstar" MaxRating="5" RatingAlign="Horizontal" WaitingStarCssClass="halfstar"
-                         EmptyStarCssClass="blankstar" FilledStarCssClass="shiningstar" runat="server">
+                                        <asp:Rating ID="HygineAverageRating" StarCssClass="blankstar" MaxRating="5" RatingAlign="Horizontal" WaitingStarCssClass="halfstar"
+                                            EmptyStarCssClass="blankstar" FilledStarCssClass="shiningstar" runat="server" ReadOnly="True">
                         </asp:Rating>
 
-                        <asp:Rating ID="ServiceAverageRating"  StarCssClass="blankstar" MaxRating="5" RatingAlign="Horizontal" WaitingStarCssClass="halfstar"
-                         EmptyStarCssClass="blankstar" FilledStarCssClass="shiningstar" runat="server"><br/>
+                                        <asp:Rating ID="ServiceAverageRating" StarCssClass="blankstar" MaxRating="5" RatingAlign="Horizontal" WaitingStarCssClass="halfstar"
+                                            EmptyStarCssClass="blankstar" FilledStarCssClass="shiningstar" runat="server" ReadOnly="True">
+                                            <br/>
                         </asp:Rating>
 
-                        <asp:Rating ID="QualityAverageRating"  StarCssClass="blankstar" MaxRating="5" RatingAlign="Horizontal" WaitingStarCssClass="halfstar"
-                         EmptyStarCssClass="blankstar" FilledStarCssClass="shiningstar" runat="server"><br/>
+                                        <asp:Rating ID="QualityAverageRating" StarCssClass="blankstar" MaxRating="5" RatingAlign="Horizontal" WaitingStarCssClass="halfstar"
+                                            EmptyStarCssClass="blankstar" FilledStarCssClass="shiningstar" runat="server" ReadOnly="True">
+                                            <br/>
                         </asp:Rating>
+                                        <asp:Rating ID="AverageRating" StarCssClass="blankstar" MaxRating="5" RatingAlign="Horizontal" WaitingStarCssClass="halfstar"
+                                            EmptyStarCssClass="blankstar" FilledStarCssClass="shiningstar" runat="server" ReadOnly="True"></asp:Rating>
                                     </td>
                                 </tr>
                             </table>

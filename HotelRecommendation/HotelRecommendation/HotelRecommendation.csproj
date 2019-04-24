@@ -43,8 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AjaxControlToolkit">
-      <HintPath>C:\Users\Komal\Downloads\AjaxRating\Bin\AjaxControlToolkit.dll</HintPath>
+    <Reference Include="AjaxControlToolkit, Version=3.0.20820.6783, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Downloads\AjaxControlToolkit\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
@@ -120,6 +121,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\revicons.svg" />
     <Content Include="HotelList.aspx" />
+    <Content Include="hotels.aspx" />
     <Content Include="images\D1.jpg" />
     <Content Include="images\D10.jpg" />
     <Content Include="images\D2.jpg" />
@@ -423,6 +425,13 @@
     </Compile>
     <Compile Include="HotelList.aspx.designer.cs">
       <DependentUpon>HotelList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hotels.aspx.cs">
+      <DependentUpon>hotels.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hotels.aspx.designer.cs">
+      <DependentUpon>hotels.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

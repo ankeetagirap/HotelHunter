@@ -51,6 +51,31 @@ namespace HotelRecommendationDAL
             return val;
         }
 
+        //public DataSet GetCityDetails(int cityid)
+        //{
+        //    objSqlCon.ConnectionString = DBHelper.ConnectionString().ToString();
+        //    SqlParameter[] objSqlParam = new SqlParameter[1];
+        //    objSqlParam[0] = new SqlParameter("@CityId", SqlDbType.VarChar);
+        //    objSqlParam[0].Direction = ParameterDirection.Input;
+        //    objSqlParam[0].Value = cityid;
+        //    DataSet val = SqlHelper.ExecuteDataset(objSqlCon, CommandType.StoredProcedure, "GetCityDetails", objSqlParam);
+        //    return val;
+        //}
+
+        public DataSet GetCityDetails()
+        {
+            objSqlCon.ConnectionString = DBHelper.ConnectionString().ToString();
+            DataSet val = SqlHelper.ExecuteDataset(objSqlCon, CommandType.StoredProcedure, "GetCityList");
+            return val;
+        }
+
+        public DataSet GetHotelDetails()
+        {
+            objSqlCon.ConnectionString = DBHelper.ConnectionString().ToString();
+            DataSet val = SqlHelper.ExecuteDataset(objSqlCon, CommandType.StoredProcedure, "GetAllHotelList");
+            return val;
+        }
+
         public DataSet GetRatings(int hotelId)
         {
             objSqlCon.ConnectionString = DBHelper.ConnectionString().ToString();

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using AjaxControlToolkit;
 using HotelRecommendationBAL;
 using HotelRecommendationDAL;
 using HotelRecommendationENTITY;
@@ -60,10 +59,11 @@ namespace HotelRecommendation
                     HygineAverageRating.CurrentRating = Haverage;
                     ServiceAverageRating.CurrentRating = Saverage;
                     QualityAverageRating.CurrentRating = Qaverage;
-
+                    AverageRating.CurrentRating = Average;
                     AverageHygineRating.Text = "Average rating for Hygine is :" + " " + Convert.ToString(Haverage);
                     AverageServiceRating.Text = "Average rating for Service is :" + " " + Convert.ToString(Saverage);
                     AverageQualityRating.Text = "Average rating for Quality is :" + " " + Convert.ToString(Qaverage);
+                    AverageRatingScore.Text = "Average rating is :" + " " + Convert.ToString(Average);
 
 
                 }

@@ -13,6 +13,15 @@ namespace HotelRecommendation {
     public partial class details {
         
         /// <summary>
+        /// tsm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ToolkitScriptManager tsm;
+        
+        /// <summary>
         /// DlDetails control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace HotelRecommendation {
         protected global::System.Web.UI.WebControls.Literal AverageQualityRating;
         
         /// <summary>
+        /// AverageRatingScore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal AverageRatingScore;
+        
+        /// <summary>
         /// HygineAverageRating control.
         /// </summary>
         /// <remarks>
@@ -74,6 +92,15 @@ namespace HotelRecommendation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.Rating QualityAverageRating;
+        
+        /// <summary>
+        /// AverageRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.Rating AverageRating;
         
         /// <summary>
         /// lblName control.

@@ -46,7 +46,7 @@ namespace HotelRecommendation
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             //Session["CityId"] = ddlCity.SelectedIndex.ToString();
-            Response.Redirect("HotelList.aspx?cityid="+ ddlCity.SelectedItem.Value);
+            Response.Redirect("HotelList.aspx?CityId="+ ddlCity.SelectedItem.Value);
         }
     }
 }
