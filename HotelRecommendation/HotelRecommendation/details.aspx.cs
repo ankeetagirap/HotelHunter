@@ -39,7 +39,6 @@ namespace HotelRecommendation
                 DataSet ds = objclsHotelRecommendationDAL.GetRatings(hotelId);
                 if (ds.Tables[0].Rows.Count > 0)
                 {
-                    // now we will loop through the rows and get the total values submitted by the user.
                     for (int getrating = 0; getrating < ds.Tables[0].Rows.Count; getrating++)
                     {
                         ratingHtotal += Convert.ToInt32(ds.Tables[0].Rows[0]["HygineRating"].ToString());
@@ -48,18 +47,19 @@ namespace HotelRecommendation
 
                     }
                     int count = ds.Tables[0].Rows.Count;
-                    // Over here we will get the average rating by dividing the total rating value by the count of users.
+                    
                     int Haverage = ratingHtotal / count;
 
                     int Qaverage = ratingQtotal / count;
                     int Saverage = ratingStotal / count;
 
-                    //ajxRating.CurrentRating = average;
+                    
                     int Average = (Qaverage + Saverage + Haverage) / 3;
                     HygineAverageRating.CurrentRating = Haverage;
                     ServiceAverageRating.CurrentRating = Saverage;
                     QualityAverageRating.CurrentRating = Qaverage;
                     AverageRating.CurrentRating = Average;
+                    DataSet output = objclsHotelRecommendationDAL.InsertAverageRating(hotelId,Average);
                     AverageHygineRating.Text = "Average rating for Hygine is :" + " " + Convert.ToString(Haverage);
                     AverageServiceRating.Text = "Average rating for Service is :" + " " + Convert.ToString(Saverage);
                     AverageQualityRating.Text = "Average rating for Quality is :" + " " + Convert.ToString(Qaverage);
@@ -102,7 +102,9 @@ namespace HotelRecommendation
                 
                 ClearAll();
                 lblmsg.Text = "Data recorded succesfully";
-                Response.Redirect("index.aspx");
+
+                DataSet ds = clsHotelRecommendationDAL.retrievehotelratings(hotelId);
+                BindRating();
 
 
             }

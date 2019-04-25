@@ -28,65 +28,40 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
     <asp:ToolkitScriptManager ID="tsm" runat ="server"></asp:ToolkitScriptManager>
-    <div class="container">
+    <div class="container-fluid">
 	<div class="well">
 		<div class="row">
-            <table>
-                <thead>
-                    
-                </thead>
-                <tbody>
                     
                     
                     <asp:DataList ID="DlDetails" runat="server">
-                        
                         <ItemTemplate>
+
                             <div class="col-md-4">
-                            </div>
-                            <div class="col-md-4">
-                                
-                           <tr class="text-center">
-                               
-                                <td><h2><%#Eval("HotelName") %></h2><br /></td>
-                          
-                                   </tr>
-                            
-                            <tr>
-                                <td>
                                     <asp:Image ID="image1" runat="server" height="260" width="300" ImageUrl='<%#Eval("ImagePath") %>' />
-                                </td>
-                            </tr>
                                 </div>
-
-                            
-
                             
                             <div class="col-md-4">
-                            
-                            <tr>
-                                <td><br /><b>Address:</b> <%#Eval("HotelAddress") %></td>
-                            </tr>
-                            <tr>
-                                <td><b>Phone No:</b> <%#Eval("PhoneNo") %></td>
-                            </tr>
-                            <tr>
-                                <td><b>Email:</b> <%#Eval("HotelEmailId") %><br /></td>
-                            </tr>
+                               
+                                <h2><%#Eval("HotelName") %></h2>
+                          
+                               <br><br>
+                           
+                          <p><b>Address:</b> <%#Eval("HotelAddress") %></p>
+                           
+                               <p> <b>Phone No:</b> <%#Eval("PhoneNo") %></p>
+                          
+                                <p> <b>Email:</b> <%#Eval("HotelEmailId") %></p>
+                           
                                 </div>
-                            
                             </ItemTemplate>
-
-
-                        
                         </asp:DataList>
-                   </tbody>
-             </table>
-                        <div class="container-fluid">
-
+               
+         
+                        <div class="col-md-4"><br/><br/><br/>
                             <table>
                                 <tr>
                                     <td>
-                                         <asp:Literal ID="AverageHygineRating" runat="server"></asp:Literal><br/>
+                                       <br />  <asp:Literal ID="AverageHygineRating" runat="server"></asp:Literal><br/>
                          
                                          <asp:Literal ID="AverageServiceRating" runat="server"></asp:Literal><br/>
                        
@@ -95,7 +70,7 @@
                                         <asp:Literal ID="AverageRatingScore" runat="server"></asp:Literal><br/>
                                     </td>
                                     <td>
-                                        <asp:Rating ID="HygineAverageRating" StarCssClass="blankstar" MaxRating="5" RatingAlign="Horizontal" WaitingStarCssClass="halfstar"
+                                       <br /> <asp:Rating ID="HygineAverageRating" StarCssClass="blankstar" MaxRating="5" RatingAlign="Horizontal" WaitingStarCssClass="halfstar"
                                             EmptyStarCssClass="blankstar" FilledStarCssClass="shiningstar" runat="server" ReadOnly="True">
                         </asp:Rating>
 
@@ -128,12 +103,12 @@
     </div>
         </div>
     
-
+    <div class="container-fluid">
     <div class="well">
 		<div class="row">
 			<div class="col-sm-3">
 			</div>
-			<div class="col-md-5">
+			<div class="col-md-6">
 				<h2>Reviews</h2><hr/>
 				
 					
@@ -199,6 +174,7 @@
                   
                     </div>
             </div>
+        </div>
         </div>&nbsp;
     
 

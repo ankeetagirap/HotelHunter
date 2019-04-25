@@ -25,13 +25,21 @@ namespace HotelRecommendation
             if(!IsPostBack)
             {
                 BindHotels();
+                BindCityList();
             }
             
         }
 
+        private void BindCityList()
+        {
+            DataSet dsDataList = objclsHotelRecommendationDAL.GetCityDetails();
+            CityList.DataSource = dsDataList;
+            CityList.DataBind();
+        }
+
         private void BindHotels()
         {
-            DataSet dsDataList = objclsHotelRecommendationDAL.GetHotelDetails();
+            DataSet dsDataList = objclsHotelRecommendationDAL.GetAllHotelDetails();
             AllHotelsList.DataSource = dsDataList;
             AllHotelsList.DataBind();
             //BindRating();

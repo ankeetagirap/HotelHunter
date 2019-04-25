@@ -42,8 +42,15 @@
                              <b>Email: </b><%#Eval("HotelEmailId") %><br />
                              <br /><a style="color:blue;" href ="details.aspx?Id=<%# DataBinder.Eval(Container.DataItem, "Id") %>"><b>Rate</b></a>
                         </div>
-                         <div class="col-sm-4">
-
+                         <div class="col-sm-2">
+                             <div class="row">
+                                    <%--<asp:Label ID="lblrating" Text="<%#Eval("AverageRating") %>" runat="server"></asp:Label>--%>
+                                    <b>AverageRating: </b><%#Eval("AverageRating") %><br />
+                                    <asp:Image ID="img" ImageUrl="~/images/FilledStar.gif" runat="server" />
+            <%--<asp:Rating ID="ajxAverageRating" StarCssClass="blankstar" MaxRating="5" RatingAlign="Horizontal" WaitingStarCssClass="halfstar"
+                                            EmptyStarCssClass="blankstar" FilledStarCssClass="shiningstar" runat="server" ReadOnly="True">
+                        </asp:Rating>--%>
+                                    </div>
                         </div>
                     
                   </div>

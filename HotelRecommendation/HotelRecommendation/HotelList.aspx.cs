@@ -4,6 +4,16 @@ using HotelRecommendationBAL;
 using HotelRecommendationDAL;
 using HotelRecommendationENTITY;
 using AjaxControlToolkit;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Drawing;
+
 
 namespace HotelRecommendation
 {
@@ -14,48 +24,31 @@ namespace HotelRecommendation
         clsHotelRecommendationENTITY objclsHotelRecommendationENTITY = new clsHotelRecommendationENTITY();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             //int cityid = Convert.ToInt32(Request.QueryString["cityid"]);
-           if (!IsPostBack)
-           {
-                BindDataList();
+            if (!IsPostBack)
+            {
+                
                 BindCityList();
                 //BindRating();
-           }
+                BindDataList();
+
+
+            }
        }
 
         //private void BindRating()
         //{
         //    try
         //    {
-        //        //int hotelId = Convert.ToInt32(Request.QueryString["Id"]);
-        //        int hotelId = Convert.ToInt32(Request.QueryString["CityId"]);                
-        //        int ratingHtotal = 0, ratingStotal = 0, ratingQtotal = 0;
-        //        DataSet ds = objclsHotelRecommendationDAL.GetRatings(hotelId);
-        //        if(ds.Tables[0].Rows.Count>0)
-        //        {
-        //            for (int getrating =0;getrating<ds.Tables[0].Rows.Count;getrating++)
-        //            {
-        //                ratingHtotal += Convert.ToInt32(ds.Tables[0].Rows[0]["HygineRating"].ToString());
-        //                ratingStotal += Convert.ToInt32(ds.Tables[0].Rows[0]["ServiceRating"].ToString());
-        //                ratingQtotal += Convert.ToInt32(ds.Tables[0].Rows[0]["QualityRating"].ToString());
-        //            }
-        //            int count = ds.Tables[0].Rows.Count;
-        //            int Haverage = ratingHtotal / count;
-        //            int Saverage = ratingStotal / count;
-        //            int Qaverage = ratingQtotal / count;
-        //            int Average = (Haverage+Saverage+Qaverage) / 3;
-                    
-                    
-        //        }
+        //        DataSet ds = objclsHotelRecommendationDAL.GetHotelRatings(Convert.ToInt32(Request.QueryString["CityId"]));
+        //        ajxAverageRating.CurrentRating = Convert.ToInt32(ds);
         //    }
         //    catch (Exception ex)
         //    {
         //        throw ex;
         //    }
         //}
-
-        
 
         private void BindCityList()
         {
@@ -64,18 +57,20 @@ namespace HotelRecommendation
             CityList.DataSource = dsDataList;
             CityList.DataBind();
 
-            
         }
 
         private void BindDataList()
         {
-            //int Id = Convert.ToInt32(Session["CityId"]);
             DataSet dsDataList = objclsHotelRecommendationDAL.GetHotelDetails(Convert.ToInt32(Request.QueryString["CityId"]));
             HotelInfo.DataSource = dsDataList;
             HotelInfo.DataBind();
-            
-            //Session["HotelId"] = Convert.ToInt32(dsDataList.Tables[0].Rows[0]["Id"]);
-
+            //if (dsDataList.Tables[0].Rows.Count > 0)
+            //{
+            //    for (int getrating = 0; getrating < dsDataList.Tables[0].Rows.Count; getrating++)
+            //    {
+            //        ajxAverageRating.CurrentRating = Convert.ToInt32(dsDataList.Tables[0].Rows[0]["AverageRating"].ToString());
+            //    }
+            //}
         }
 
         

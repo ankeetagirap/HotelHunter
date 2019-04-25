@@ -51,6 +51,65 @@ namespace HotelRecommendationDAL
             return val;
         }
 
+        public DataSet GetAllHotelDetails()
+        {
+            objSqlCon.ConnectionString = DBHelper.ConnectionString().ToString();
+            DataSet val = SqlHelper.ExecuteDataset(objSqlCon, CommandType.StoredProcedure, "GetAllHotelDetails");
+            return val;
+        }
+
+        
+
+        public DataSet GetHotelRatings(int v)
+        {
+            objSqlCon.ConnectionString = DBHelper.ConnectionString().ToString();
+            SqlParameter[] objSqlParam = new SqlParameter[1];
+            objSqlParam[0] = new SqlParameter("@CityId", SqlDbType.VarChar);
+            objSqlParam[0].Direction = ParameterDirection.Input;
+            objSqlParam[0].Value = v;
+            DataSet val = SqlHelper.ExecuteDataset(objSqlCon, CommandType.StoredProcedure, "GetHotelRatings", objSqlParam);
+            return val;
+        }
+
+        public DataSet GetHotels(int cityId)
+        {
+            objSqlCon.ConnectionString = DBHelper.ConnectionString().ToString();
+            SqlParameter[] objSqlParam = new SqlParameter[1];
+            objSqlParam[0] = new SqlParameter("@CityId", SqlDbType.VarChar);
+            objSqlParam[0].Direction = ParameterDirection.Input;
+            objSqlParam[0].Value = cityId;
+            DataSet val = SqlHelper.ExecuteDataset(objSqlCon, CommandType.StoredProcedure, "GetHotels", objSqlParam);
+            return val;
+
+        }
+
+        public DataSet InsertAverageRating(int hotelId, int average)
+        {
+            objSqlCon.ConnectionString = DBHelper.ConnectionString().ToString();
+            SqlParameter[] objSqlParam = new SqlParameter[2];
+
+            objSqlParam[0] = new SqlParameter("@hotelid", SqlDbType.VarChar);
+            objSqlParam[0].Direction = ParameterDirection.Input;
+            objSqlParam[0].Value = hotelId;
+
+            objSqlParam[1] = new SqlParameter("@AverageRating", SqlDbType.VarChar);
+            objSqlParam[1].Direction = ParameterDirection.Input;
+            objSqlParam[1].Value = average;
+            DataSet val = SqlHelper.ExecuteDataset(objSqlCon, CommandType.StoredProcedure, "InsertAverageRating", objSqlParam);
+            return val;
+        }
+
+        //public DataSet InsertAverageRating(int average)
+        //{
+        //    objSqlCon.ConnectionString = DBHelper.ConnectionString().ToString();
+        //    SqlParameter[] objSqlParam = new SqlParameter[1];
+        //    objSqlParam[0] = new SqlParameter("@AverageRating", SqlDbType.VarChar);
+        //    objSqlParam[0].Direction = ParameterDirection.Input;
+        //    objSqlParam[0].Value = average;
+        //    DataSet val = SqlHelper.ExecuteDataset(objSqlCon, CommandType.StoredProcedure, "InsertAverageRating", objSqlParam);
+        //    return val;
+        //}
+
         //public DataSet GetCityDetails(int cityid)
         //{
         //    objSqlCon.ConnectionString = DBHelper.ConnectionString().ToString();
@@ -95,6 +154,18 @@ namespace HotelRecommendationDAL
             objSqlParam[0].Direction = ParameterDirection.Input;
             objSqlParam[0].Value = hotelId;
             DataSet val = SqlHelper.ExecuteDataset(objSqlCon, CommandType.StoredProcedure, "FetchHotelDetail", objSqlParam);
+            return val;
+        }
+
+        public static DataSet retrievehotelratings(int hotelId)
+        {
+            SqlConnection objSqlCon = new SqlConnection();
+            objSqlCon.ConnectionString = DBHelper.ConnectionString().ToString();
+            SqlParameter[] objSqlParam = new SqlParameter[1];
+            objSqlParam[0] = new SqlParameter("@hotelid", SqlDbType.VarChar);
+            objSqlParam[0].Direction = ParameterDirection.Input;
+            objSqlParam[0].Value = hotelId;
+            DataSet val = SqlHelper.ExecuteDataset(objSqlCon, CommandType.StoredProcedure, "fetchhotelratings", objSqlParam);
             return val;
         }
 
